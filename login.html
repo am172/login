@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Fustat:wght@200..800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+    </style>
+
+    <title>تسجيل دخول</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+
+        <div class="form-container sign-up">
+            <form action="signup.php" method="POST">
+                <h1>إنشاء حساب</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="icon"><i class="fab fa-google"></i></a>
+                    <a href="#" class="icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <input type="text" name="name" id="name" placeholder="أدخل الاسم">
+                <input type="password" name="password" id="password" placeholder="أدخل كلمة المرور">
+                <button>إنشاء حساب</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in">
+            <form action="login.php" method="POST">
+                <h1>تسجيل الدخول</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="icon"><i class="fab fa-google"></i></a>
+                    <a href="#" class="icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <input type="text" name="name" id="loginName" placeholder="أدخل الاسم">
+                <input type="password" name="password" id="loginPassword" placeholder="أدخل كلمة المرور">
+                <span>للمسؤولين</span>
+                <input type="password" name="adminCode" id="adminCode" placeholder="أدخل الكود">
+                <a href="#">نسيت كلمة السر ؟</a>
+                <button id="btn">تسجيل دخول</button>
+            </form>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>أهلاً بالعودة</h1>
+                    <p>لديك حساب بالفعل</p>
+                    <button class="hidden" id="login">تسجيل دخول</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>أهلاً</h1>
+                    <p>إنشاء حساب جديد</p>
+                    <button class="hidden" id="register">إنشاء حساب</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const registerBtn = document.getElementById('register');
+        const loginBtn = document.getElementById('login');
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click', () => {
+            window.alert("تم حفظ المعلومات");
+        });
+
+        registerBtn.addEventListener('click', () => {
+            container.classList.add("active");
+        });
+
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>
